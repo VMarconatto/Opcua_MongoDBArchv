@@ -2,6 +2,7 @@ const Device01_WriteDB = require("./db/Device01Crd.js")
 const opcua = require('node-opcua')
 const itemsToMonitor  = require("./db/Device01.js")
 const endpoints = "opc.tcp://192.168.1.13:4840"
+const {ClientSession} =  require('node-opcua')
 
 const client = opcua.OPCUAClient.create(
     {
@@ -56,7 +57,7 @@ class OpcuaClient {
     }
 
     clienteconnect() {
-        
+
         client.connect(endpoints, (err) => {
             var msg = err ? console.log(`Cannot to connect to endpoint partner ${endpoints}`)
                 : console.log(`Connected to endpoint partner ${endpoints}`)
@@ -67,7 +68,7 @@ class OpcuaClient {
     createsession() {
 
         client.createSession((err, session) => {
-
+session.createSubscription2()
             if (err) { return err }
             var the_session = session
             console.log(`Session Created`)
@@ -75,22 +76,29 @@ class OpcuaClient {
             this.readvariables(session)
         })
     }
-
+/**
+ *
+ * @param {ClientSession} session
+ */
     readvariables(session) {
 
         const ids = [...itemsToMonitor]
         const data = []
         ids.forEach(async function (id) {
             var nodeId = 'ns=3;s=' + id
-            await session.read({ nodeId: opcua.resolveNodeId(nodeId), attributeId: opcua.AttributeIds.Value }, (err, dataValue) => {
+            session.read({ nodeId: opcua.resolveNodeId(nodeId), attributeId: opcua.AttributeIds.Value }, (err, dataValue) => {
                 data.push(dataValue.value.value)
                 if (data.length >= itemsToMonitor.length) {
                     Device01_WriteDB(data)
                 }
             })
         })
-        this.close(session)    
+        this.close(session)
     }
+    /**
+ *
+ * @param {ClientSession} session
+ */
     close(session){
         client.closeSession(session,true,(err)=>{
             var msg = err?console.log(`Error: ${err}`):console.log('Session Closed OK') + setTimeout(() => {

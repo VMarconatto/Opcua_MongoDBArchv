@@ -5,6 +5,10 @@ const aggMT = Device01_MongoClient.db('MyCompany').collection('Device01_Motors')
 const aggTT = Device01_MongoClient.db('MyCompany').collection('Device01_Transmiters')
 const aggVV = Device01_MongoClient.db('MyCompany').collection('Device01_Valves')
 
+/**
+ *
+ * @param {[]} data
+ */
 async function Device01_WriteDB(data = []) {
     console.log(`Entrou no Crd + ${data}`)
     try {
