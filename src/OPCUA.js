@@ -68,7 +68,7 @@ class OpcuaClient {
     createsession() {
 
         client.createSession((err, session) => {
-session.createSubscription2()
+
             if (err) { return err }
             var the_session = session
             console.log(`Session Created`)
