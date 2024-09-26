@@ -1,0 +1,12 @@
+.eslintignore
+documentation/
+test/
+.vscode/
+tsconfig.json
+tsconfig.pre.json
+*.tsbuildinfo
+pnpm-lock.yaml
+tslint.*
+.mocharc.*
+!source/_generated_opcua_types.ts
+dist/generate.*

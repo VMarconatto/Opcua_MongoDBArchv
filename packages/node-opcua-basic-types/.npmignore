@@ -1,0 +1,7 @@
+out/
+test/
+test_to_fix/
+tsconfig.json
+*.tsbuildinfo
+pnpm-lock.yaml
+.mocharc.yml

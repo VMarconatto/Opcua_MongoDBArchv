@@ -1,0 +1,20 @@
+{
+    "extends": "../../tsconfig.common.json",
+    "compilerOptions": {
+        "composite": true,
+        "incremental": true
+    },
+    "references": [
+        {
+            "path": "./tsconfig_common.json"
+        },
+        {
+            "path": "./tsconfig_nodejs.json"
+        },
+        {
+            "path": "./tsconfig_helpers.json"
+        }
+    ],
+    "include": [],
+    "exclude": ["node_modules", "dist*"]
+}

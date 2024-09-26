@@ -1,0 +1,32 @@
+{
+    "name": "node-opcua-test-helpers",
+    "version": "2.128.0",
+    "description": "pure nodejs OPCUA SDK - module test-helpers",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "private": true,
+    "scripts": {
+        "build": "tsc -b",
+        "clean": "npx rimraf node_modules dist *.tsbuildinfo",
+        "test": "echo no test"
+    },
+    "author": "Etienne Rossignon",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/node-opcua/node-opcua.git"
+    },
+    "keywords": [
+        "OPCUA",
+        "opcua",
+        "m2m",
+        "iot",
+        "opc ua",
+        "internet of things"
+    ],
+    "homepage": "http://node-opcua.github.io/",
+    "files": [
+        "dist",
+        "source"
+    ]
+}

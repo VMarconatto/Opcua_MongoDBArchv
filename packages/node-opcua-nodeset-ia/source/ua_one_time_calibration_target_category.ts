@@ -1,0 +1,20 @@
+// ----- this file has been automatically generated - do not edit
+import { UABaseCalibrationTargetCategory, UABaseCalibrationTargetCategory_Base } from "./ua_base_calibration_target_category"
+/**
+ * Categorizes a calibration target to be used only
+ * once, for example because the calibration
+ * destroys the target. Typically, Objects of this
+ * ObjectType do not represent one individual
+ * calibration target, but a batch of calibration
+ * targets with the same characteristics.
+ *
+ * |                |                                                            |
+ * |----------------|------------------------------------------------------------|
+ * |namespace       |http://opcfoundation.org/UA/IA/                             |
+ * |nodeClass       |ObjectType                                                  |
+ * |typedDefinition |OneTimeCalibrationTargetCategoryType i=1017                 |
+ * |isAbstract      |false                                                       |
+ */
+export type UAOneTimeCalibrationTargetCategory_Base = UABaseCalibrationTargetCategory_Base;
+export interface UAOneTimeCalibrationTargetCategory extends UABaseCalibrationTargetCategory, UAOneTimeCalibrationTargetCategory_Base {
+}

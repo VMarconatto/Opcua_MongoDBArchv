@@ -1,0 +1,16 @@
+// ----- this file has been automatically generated - do not edit
+import { UAObject, UAProperty } from "node-opcua-address-space-base"
+import { DataType } from "node-opcua-variant"
+/**
+ * |                |                                                            |
+ * |----------------|------------------------------------------------------------|
+ * |namespace       |http://opcfoundation.org/UA/MachineTool/                    |
+ * |nodeClass       |ObjectType                                                  |
+ * |typedDefinition |PrognosisType i=3                                           |
+ * |isAbstract      |true                                                        |
+ */
+export interface UAPrognosis_Base {
+    predictedTime: UAProperty<Date, DataType.DateTime>;
+}
+export interface UAPrognosis extends UAObject, UAPrognosis_Base {
+}
