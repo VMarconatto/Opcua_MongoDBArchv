@@ -125,7 +125,7 @@ async function Device01_WriteDB(data = []) {
                 )
             },)
             .catch((e) => {
-                console.log('O erro é :' + e)
+                console.log('error :' + e)
             })
 
     }
